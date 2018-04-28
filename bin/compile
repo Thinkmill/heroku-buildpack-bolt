@@ -31,5 +31,3 @@ cd $BUILD_DIR
 bolt
 
 header "Bolt Install Complete"
-
-mcount "compile"

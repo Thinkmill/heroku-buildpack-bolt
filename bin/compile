@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir> <env-dir>
+
+### Configure environment
+
+set -o errexit    # always exit on error
+set -o pipefail   # don't ignore exit codes when piping output
+
+### Configure directories
+
+BUILD_DIR=${1:-}
+
+### Install Bolt
+
+header "Installing Bolt"
+
+npm i -g bolt
+
+### Compile
+
+header "Installing Bolt Packages"
+
+cd $BUILD_DIR
+bolt
+
+header "Bolt Install Complete"
+
+mcount "compile"

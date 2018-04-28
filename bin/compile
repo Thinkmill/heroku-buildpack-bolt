@@ -6,6 +6,13 @@
 set -o errexit    # always exit on error
 set -o pipefail   # don't ignore exit codes when piping output
 
+### Configure output
+
+header() {
+  echo "" || true
+  echo "-----> $*" || true
+}
+
 ### Configure directories
 
 BUILD_DIR=${1:-}
